@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 17 Maj 2022, 18:19
+-- Czas generowania: 17 Maj 2022, 22:17
 -- Wersja serwera: 10.4.22-MariaDB
 -- Wersja PHP: 8.1.2
 
@@ -45,6 +45,49 @@ INSERT INTO `appointment` (`id`, `offer_id`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `client`
+--
+
+CREATE TABLE `client` (
+  `id` int(11) NOT NULL,
+  `marka` varchar(255) NOT NULL,
+  `rocznik` varchar(255) NOT NULL,
+  `phone` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `client`
+--
+
+INSERT INTO `client` (`id`, `marka`, `rocznik`, `phone`) VALUES
+(1, 'Mercedes', '1984', '+48777777777'),
+(2, 'BMW', '1920', '+48666666666'),
+(3, 'BMW', '1920', '+48666666666');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `clientappointment`
+--
+
+CREATE TABLE `clientappointment` (
+  `id` int(11) NOT NULL,
+  `client_id` int(11) NOT NULL,
+  `appointment_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `clientappointment`
+--
+
+INSERT INTO `clientappointment` (`id`, `client_id`, `appointment_id`) VALUES
+(1, 1, 1),
+(2, 2, 2),
+(3, 2, 3);
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `offer`
 --
 
@@ -75,6 +118,20 @@ ALTER TABLE `appointment`
   ADD KEY `offer_id` (`offer_id`);
 
 --
+-- Indeksy dla tabeli `client`
+--
+ALTER TABLE `client`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeksy dla tabeli `clientappointment`
+--
+ALTER TABLE `clientappointment`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `client_id` (`client_id`),
+  ADD KEY `appointment_id` (`appointment_id`);
+
+--
 -- Indeksy dla tabeli `offer`
 --
 ALTER TABLE `offer`
@@ -88,6 +145,18 @@ ALTER TABLE `offer`
 -- AUTO_INCREMENT dla tabeli `appointment`
 --
 ALTER TABLE `appointment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT dla tabeli `client`
+--
+ALTER TABLE `client`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT dla tabeli `clientappointment`
+--
+ALTER TABLE `clientappointment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
