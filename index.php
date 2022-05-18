@@ -1,3 +1,6 @@
+<a href="account.php">Zaloguj / Zarejestruj się</a>
+<br>
+<br>
 <?php
 
 use LDAP\Result;
@@ -37,5 +40,8 @@ echo "<br>";
 
     
 }
+
+
+
 
 ?>

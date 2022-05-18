@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 17 Maj 2022, 22:17
+-- Czas generowania: 18 Maj 2022, 14:57
 -- Wersja serwera: 10.4.22-MariaDB
--- Wersja PHP: 8.1.2
+-- Wersja PHP: 8.0.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `mech`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `account`
+--
+
+CREATE TABLE `account` (
+  `id` int(100) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `passwordHash` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `account`
+--
+
+INSERT INTO `account` (`id`, `email`, `passwordHash`) VALUES
+(1, 'XD@gmail.com', '$argon2i$v=19$m=65536,t=4,p=1$SUxWNjdWTE1OaE1Fc1plcQ$3fC9Nz+rKMMXq4wyNXBPmBQINTlN7f4xRwxPLlZrqWw');
 
 -- --------------------------------------------------------
 
@@ -111,6 +130,12 @@ INSERT INTO `offer` (`id`, `Nazwa`, `Cena`) VALUES
 --
 
 --
+-- Indeksy dla tabeli `account`
+--
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeksy dla tabeli `appointment`
 --
 ALTER TABLE `appointment`
@@ -140,6 +165,12 @@ ALTER TABLE `offer`
 --
 -- AUTO_INCREMENT dla zrzuconych tabel
 --
+
+--
+-- AUTO_INCREMENT dla tabeli `account`
+--
+ALTER TABLE `account`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `appointment`
