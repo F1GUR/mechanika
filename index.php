@@ -58,7 +58,7 @@ if(isset($_REQUEST['action']) && $_REQUEST['action'] == "register")	{
 
 ?>
 <h1>Zaloguj sie</h1>
-<form action="account.php" method="get">
+<form action="index.php" method="get">
 	<label for="emailInput">Email:</label>	
 	<input type="email" name="email" id="emailInput">
 	<label for="passwordInput">Haslo:</label>
@@ -67,7 +67,7 @@ if(isset($_REQUEST['action']) && $_REQUEST['action'] == "register")	{
 	<input type="submit" value="Zaloguj">
 </form>
 <h1>Zarejestruj sie</h1>
-<form action="account.php" method="post">
+<form action="index.php" method="post">
 	<label for="emailInput">Email:</label>	
 	<input type="email" name="email" id="emailInput">
 	<label for="passwordInput">Haslo:</label>

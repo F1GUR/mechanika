@@ -18,7 +18,7 @@ if(isset($_REQUEST['marka']) && isset($_REQUEST['rocznik']) && isset($_REQUEST['
     $q->prepare("INSERT INTO clientappointment VALUES (NULL, ?, ?)");
     $q->bind_param("ii", $appointmentId, $clientId);
     $q->execute();
-    echo "Zapisano na usługę";
+    header("Location: payment.php");
 }else { ?>
   
   <form action="appointment.php">

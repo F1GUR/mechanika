@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 18 Maj 2022, 14:57
--- Wersja serwera: 10.4.22-MariaDB
--- Wersja PHP: 8.0.15
+-- Czas generowania: 23 Maj 2022, 12:50
+-- Wersja serwera: 10.4.21-MariaDB
+-- Wersja PHP: 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,7 +38,8 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`id`, `email`, `passwordHash`) VALUES
-(1, 'XD@gmail.com', '$argon2i$v=19$m=65536,t=4,p=1$SUxWNjdWTE1OaE1Fc1plcQ$3fC9Nz+rKMMXq4wyNXBPmBQINTlN7f4xRwxPLlZrqWw');
+(1, 'XD@gmail.com', '$argon2i$v=19$m=65536,t=4,p=1$SUxWNjdWTE1OaE1Fc1plcQ$3fC9Nz+rKMMXq4wyNXBPmBQINTlN7f4xRwxPLlZrqWw'),
+(2, 'XD1@gmail.com', '$argon2i$v=19$m=65536,t=4,p=1$cFRwWkUweTNKbnIwRUpETA$lCWZHThYSdjztv6tJITrbtH5riqSaR6Elo1DAWIwUek');
 
 -- --------------------------------------------------------
 
@@ -81,7 +82,21 @@ CREATE TABLE `client` (
 INSERT INTO `client` (`id`, `marka`, `rocznik`, `phone`) VALUES
 (1, 'Mercedes', '1984', '+48777777777'),
 (2, 'BMW', '1920', '+48666666666'),
-(3, 'BMW', '1920', '+48666666666');
+(3, 'BMW', '1920', '+48666666666'),
+(4, 'Ford', '2004', '123123123'),
+(5, 'Opel', '1000', '321321321'),
+(6, '', '', ''),
+(7, 'BMW', '2006', '123123124'),
+(8, 'BMW', '2004', '123123125'),
+(9, 'BMW', '2001', '123123321'),
+(10, 'BMW', '2001', '123123322'),
+(11, 'BMW', '2001', '1231233267'),
+(12, 'Opel', '2007', '321321321'),
+(13, 'Chevrolet', '2000', '222222222'),
+(14, 'Porsche', '2017', '142142124'),
+(15, 'Banan', '2017', '142142125'),
+(16, 'Mercedes', '2000', '1111111111'),
+(17, 'Mini', '2010', '333222111');
 
 -- --------------------------------------------------------
 
@@ -102,7 +117,21 @@ CREATE TABLE `clientappointment` (
 INSERT INTO `clientappointment` (`id`, `client_id`, `appointment_id`) VALUES
 (1, 1, 1),
 (2, 2, 2),
-(3, 2, 3);
+(3, 2, 3),
+(4, 1, 4),
+(5, 1, 5),
+(6, 1, 6),
+(7, 1, 7),
+(8, 1, 8),
+(9, 1, 9),
+(10, 1, 10),
+(11, 1, 11),
+(12, 3, 12),
+(13, 3, 13),
+(14, 3, 14),
+(15, 3, 15),
+(16, 3, 16),
+(17, 3, 17);
 
 -- --------------------------------------------------------
 
@@ -170,7 +199,7 @@ ALTER TABLE `offer`
 -- AUTO_INCREMENT dla tabeli `account`
 --
 ALTER TABLE `account`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `appointment`
@@ -182,13 +211,13 @@ ALTER TABLE `appointment`
 -- AUTO_INCREMENT dla tabeli `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT dla tabeli `clientappointment`
 --
 ALTER TABLE `clientappointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT dla tabeli `offer`
